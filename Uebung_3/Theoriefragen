@@ -1,0 +1,33 @@
+A3.1
+
+d)
+kooperatives Multithreading: 
+  Der Thread meldet an das Betriebssystem, wenn er sich "schlafen" legt. Das Betriebssystem entscheidet welcher Thread als nächstes gewählt wird
+  und weckt diesen dann wieder auf. Die Kontrolle beruht auf Kooperation zwischen Betriebssystem und laufender Threads. 
+
+präemptives Multithreading: 
+  Das Betriebssystem realisiert selbst welcher Thread gerade nicht aktiv ist, bzw. beendet wird. Des weiteren wählt das Betriebssystem den nächsten
+  Thread, der aufgeweckt wird, selbst aus. Die Kontrolle liegt ausschließlich beim Betriebssystem. 
+
+A3.2 
+
+a) 
+Unterschied Multitasking / Multithreading: 
+    Multitasking heißt, das sich mehrere Programme (Prozesse) die bestehenden Resourcen, wie Prozessor oder ähnliches, teilen. 
+    Multithreading heißt, das in einem Programm spezifische Operationen aufgeteilt werden und diese sich ebenso wie Tasks (siehe oben)
+    die bestehenden Betriebsmittel teilen. 
+
+Welche Adressbereiche werden beim Multithreading von allen Threads gemeinsam genutzt?
+    Systemdaten, allgemeiner Stack, Daten, Heap, BS
+
+Welche Adressbereiche sind privat zu halten?
+    Code und Daten spezifisch fuer den Thread sind privat zu halten. 
+
+A3.3
+a)
+Der Aufrufer muss sich dann darum kümmern, das der Thread terminiert wird.
+Ansonsten bleibt der Thread bestehen, obwohl er nicht mehr gebraucht wird. 
+
+c)
+Wenn die Bibliothek mit je einer Methode block / unblock erweitert werden
+  würde, könnte präemtives Multithreading realisiert werden. 

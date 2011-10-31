@@ -1,0 +1,14 @@
+time
+	real: 
+		Die Zeit in Sekunden, die tatsächlich vergangen ist.
+		Entspricht der Zeit die man erhalten würde, wenn man 
+		den Zeitbedarf des Programms mit einer Stoppuhr 
+		messen würde.
+
+	user:
+		Die CPU-Zeit die der Prozess verbraucht hat im 
+		unpriveligierten Modus verbraucht hat.
+
+	sys:	
+		Die CPU-Zeit die der Prozess im privilegierten
+		Modus verbraucht hat.

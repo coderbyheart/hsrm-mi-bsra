@@ -1,0 +1,1 @@
+fisch.o: fisch.c fischdb.h fisch-args.h fisch-help.h

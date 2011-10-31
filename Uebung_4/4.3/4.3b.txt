@@ -1,0 +1,16 @@
+Beispiel-Ergebnis (mit print):
+	Minimale Differenz: 4 ms
+	Maximale Differenz: 2523 ms
+
+Beispiel-Ergebnis (ohne print):
+	Minimale Differenz: 0 ms
+	Maximale Differenz: 22 ms
+
+Rein theoretisch sollte die minimale Differen größer oder gleich des System-Taktes sein. 
+Diese ist unter Unix normalerweise 100 Hz, dementsprechend müsste die minimale Differenz 
+mindestens 10ms betragen, da die System-Uhr ja auch nur alle 10ms aktualisiert wird.
+
+Allerdings verwenden die Time-Funktionen auch die Hardware-Uhr des Systems,
+die eine Auflösung von 32 kHz hat. [1]
+
+[1] http://en.wikipedia.org/wiki/Real-time_clock

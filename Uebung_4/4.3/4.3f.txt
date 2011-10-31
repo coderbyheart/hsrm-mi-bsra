@@ -1,0 +1,3 @@
+strace
+	In der Ausgabe von strace können alle Systemaufrufe
+	des beobachteten Programms nachverfolgt werden.

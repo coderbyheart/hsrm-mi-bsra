@@ -1,0 +1,55 @@
+8.1 a)
+
+Das Problem resultiert aus dem gleichzeitigen, schreibenden
+Zugriff auf die Datenbank-Datei durch die vielen Instanzen
+der fisch-Programme.
+
+Das Bezeichnet man als Race-Condition.
+
+Schreibt z.B. ein Prozess in die Datenbank während ein
+anderer Prozess aus der Datenbank liest, kommt es zu
+Fehlern.
+
+8.1 b)
+
+Neu vorgenommener Eintrag verschwindet
+
+ClientA öffnet die Datenbank um einen Eintrag zu löschen. 
+Während er anschließend die Datenbank in das Tempfile kopiert
+öffnet ClientB die Datenbank, um einen Eintrag hinzu zu fügen.
+Bevor er seinen Datensatz an die Datenbankdatei anhängt, ist
+ClientA fertig mit dem kopieren.
+ClientB hängt seinen Datensatz an die Datei an und schließt 
+diese.
+Jetzt überschreibt allerdings ClientA die Datenbankdatei mit
+dem Tempfile. 
+
+
+Preisaufschlag geht verloren
+
+Wie beim vorigen Bespiel wird der geänderte Datensatz durch
+beim Löschen eines Datensatzes durch einen anderen Prozess
+durch eine ältere Kopie aus dem Tempfile wieder überschrieben.
+
+
+Datenbank korrumpiert
+
+Diese Fehlermeldung wird ausgegeben, wenn nach dem Lesen 
+aus der Datenbank noch weitere Daten mit unerwarter Länge
+("Junk") vorhanden sind.
+
+Das passiert, wenn ein anderer Prozess Datensätze an die 
+Datenbankdatei anhängt. Dieser Schreibvorgang findet nicht
+immer atomar statt, sondern in mehreren Schritten.
+
+Dann kann es passieren, dass am Ende der Datei schon ein
+Teil eines Fisch-Datensatzes steht.
+
+
+Datenbank nicht vorhanden
+
+Das passiert, wenn ein Prozess versucht auf die Datenbank-
+datei zu zu greifen, während gerade ein Anderer diese durch
+das Tempfile ersetzt.
+
+EOF $Id: Textaufgaben.txt 101 2011-01-07 12:01:37Z m $

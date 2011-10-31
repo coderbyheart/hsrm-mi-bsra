@@ -1,0 +1,1 @@
+libmmytime.o: libmytime.c ../include/mytime.h

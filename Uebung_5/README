@@ -1,0 +1,14 @@
+netcp - kopiert Dateien über das Netzwerk
+
+Server starten:
+	./netcpd -d 1
+
+Beispiele (Dateien vom Client zum Server kopieren):
+	./netcp -d 1 source.txt localhost:target.txt
+	# Paralleles kopieren
+	./netcp -d 1 source.txt localhost:target.txt & ./netcp -d 1 source.txt localhost:target2.txt & ./netcp -d 1 source.txt localhost:target3.txt
+	
+Beispiele (Dateien vom Server zum Client kopieren):
+	./netcp -d 1 localhost:source.txt target.text
+	# Paralleles kopieren
+	./netcp -d 1 localhost:source.txt target.text & ./netcp -d 1 localhost:source.txt target2.text & ./netcp -d 1 localhost:source.txt target3.text
